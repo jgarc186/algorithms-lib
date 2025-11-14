@@ -1,0 +1,25 @@
+<html>
+    <main>
+        <body>
+            <div id="app"></div>
+        </body>
+        <script type="module">
+            import { sortingData } from "../mocks/sortingData.mjs";
+            import { bubbleSort, selectionSort, insertionSort } from "./easy/index.js";
+
+            const results = bubbleSort(sortingData[0]);
+
+            const app = document.getElementById("app");
+
+            app.innerHTML = `
+                <p class="results">${results.join()}</p>
+            `;
+        </script>
+    </main>
+
+    <style>
+        .results {
+            font-size: 28px;
+        }
+    </style>
+</html>
