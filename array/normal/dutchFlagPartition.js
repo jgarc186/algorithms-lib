@@ -6,18 +6,17 @@
  * This is known as Dutch national flag partitioning, because the Dutch national flag consists
  * of three horizontal bands, each in a different color.
  */
-
 function dutchFlagPartition(idx, array) {
     // we want to get the value that we want to pivot from
     let pivot = array[idx]
 
     let smaller = 0
     let equal = 0
-    let larger = array.length 
+    let larger = array.length - 1
 
     // as long as the equal value is less than the larger
     // we are going to iterate over our array
-    while (equal < larger) {
+    while (equal <= larger) {
         // if the equal value is less than the pivot value
         if (array[equal] < pivot) {
             // if this is the case we are going to swap the values 
@@ -33,8 +32,8 @@ function dutchFlagPartition(idx, array) {
         } else {
             // otherwise wise we decrease the larger value and swap the 
             // equal and the larger value
-            larger--
             [array[equal], array[larger]] = [array[larger], array[equal]]
+            larger--
         }
     }
 }
