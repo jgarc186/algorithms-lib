@@ -1,5 +1,5 @@
 function findThreeLargestNumbers(numbers) {
-    let threeLargest = [null, null, null];
+    const threeLargest = [null, null, null];
     numbers.forEach(number => {
         organize(number, threeLargest);
     });

@@ -2,7 +2,7 @@ import { swap } from "./swap.mjs";
 
 // find me all the possible permutations of the given phone number
 function permutations(array) {
-    let permutations = [];
+    const permutations = [];
     getPermutations(0, array, permutations);
     return permutations;
 }
