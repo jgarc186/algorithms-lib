@@ -42,6 +42,5 @@ function isValidPart(string) {
     return false;
   }
   
-  // Checking for leading 0
   return string.length === String(stringAsInt).length;
 }
