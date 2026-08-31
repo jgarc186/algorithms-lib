@@ -1,0 +1,47 @@
+function validIPAddresses(string) {
+  const ipAddressesFound = [];
+  
+  for (let i = 1; i < Math.min(string.length, 4); i++) {
+    const currentIPAddressParts = ['', '', '', ''];
+    currentIPAddressParts[0] = string.slice(0, i);
+    
+    if (!isValidPart(currentIPAddressParts[0])) {
+      continue;
+    }
+    
+    for (let j = i + 1; j < i + Math.min(string.length - i, 4); j++) {
+      currentIPAddressParts[1] = string.slice(i, j);
+      
+      if (!isValidPart(currentIPAddressParts[1])) {
+        continue;
+      }
+      
+      for (let k = j + 1; k < j + Math.min(string.length - j, 4); k++) {
+        currentIPAddressParts[2] = string.slice(j, k);
+        currentIPAddressParts[3] = string.slice(k);
+        
+        if (isValidPart(currentIPAddressParts[2]) && isValidPart(currentIPAddressParts[3])) {
+          ipAddressesFound.push(currentIPAddressParts.join('.'));
+        }
+      }
+    }
+  }
+  
+  return ipAddressesFound;
+}
+
+function isValidPart(string) {
+  // Handle empty string or non-numeric input
+  if (string === '' || isNaN(string)) {
+    return false;
+  }
+  
+  const stringAsInt = parseInt(string, 10);
+  
+  if (stringAsInt > 255) {
+    return false;
+  }
+  
+  // Checking for leading 0
+  return string.length === String(stringAsInt).length;
+}
