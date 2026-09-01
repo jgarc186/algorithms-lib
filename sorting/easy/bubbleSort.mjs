@@ -1,10 +1,11 @@
+const sortingData = [2, 5, 3, 4, 1]
 
 export default function bubbleSort(array) {
     for (let i = 0; i <= array.length - 1; i++) {
-        for (let j = 0; j <= array.length; j++) {
-            if (array[j] > array[j + 1]) {
-                const tmp = array[j + 1];
-                array[j + 1] = array[j];
+        for (let j = 0; j <= array.length - 1; j++) {
+            if (array[j] > array[i]) {
+                const tmp = array[i];
+                array[i] = array[j];
                 array[j] = tmp;
             }
         }
@@ -12,7 +13,4 @@ export default function bubbleSort(array) {
     return array;
 }
 
-// expect [1, 1, 2, 2, 3, 3, 4, 10]
-// console.log(bubbleSort(sortingData[0]));
-// expect [1, 2, 2, 2, 3, 4, 10, 21, 30, 50, 100]
-// console.log(bubbleSort(sortingData[1]));
+console.log(bubbleSort(sortingData));

@@ -13,7 +13,8 @@ export default function insertionSort(array) {
     return array;
 }
 
+console.log(insertionSort([2, 1, 4, 5, 3]));
 // expect [1, 1, 2, 2, 3, 3, 4, 10]
-console.log(insertionSort(sortingData[0]));
+// console.log(insertionSort(sortingData[0]));
 // expect [1, 2, 2, 2, 3, 4, 10, 21, 30, 50, 100]
-console.log(insertionSort(sortingData[1]));
+// console.log(insertionSort(sortingData[1]));
