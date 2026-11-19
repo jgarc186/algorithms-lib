@@ -3,11 +3,9 @@
 function productSum(array, multiplier = 1) {
     let sum = 0;
     array.forEach(element => {
-        if (Array.isArray(element)) {
-            sum += productSum(element, multiplier + 1);
-        } else {
-            sum += element;
-        }
+        sum += Array.isArray(element)
+            ? productSum(element, multiplier + 1)
+            : element
     });
     return sum * multiplier;
 }

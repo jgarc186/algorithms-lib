@@ -1,5 +1,5 @@
 function phoneNumberMnemonic(phoneNumber) {
-    const current = Array(phoneNumber.length - 1).fill("0")
+    const current = Array(phoneNumber.length).fill("0")
     const mnemonic = [];
     getMnemonic(0, phoneNumber, current, mnemonic);
     return mnemonic
